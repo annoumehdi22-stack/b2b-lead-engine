@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  b2b-lead-engine:
+    build: .
+    container_name: b2b-scraper-ai
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app # Bash ay modification f l-code t-ban live
+    env_file:
+      - .env
+    restart: unless-stopped
